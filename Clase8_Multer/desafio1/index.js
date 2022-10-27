@@ -9,6 +9,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 let personas = [{ nombre: "Juan", apellido: "Perez", edad: 21 }];
+let mascotas = [];
+
+app.use("/personas", routerPersonas);
 
 routerPersonas.get("/", (req, res) => {
   res.json(personas);
@@ -18,8 +21,6 @@ routerPersonas.post("/", (req, res) => {
   personas.push(req.body);
   res.json(personas);
 });
-
-app.use("/personas", routerPersonas);
 
 app
   .listen(8000, () => {

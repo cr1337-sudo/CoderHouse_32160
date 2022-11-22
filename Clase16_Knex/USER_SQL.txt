@@ -1,0 +1,10 @@
+# Crear usuario
+
+CREATE USER $user@$host IDENTIFIED BY $password;
+CREATE USER 'coder'@'localhost' IDENTIFIED BY 'house';
+
+# Asignar privilegios
+
+GRANT $privileges ON $database.$table TO $user@$host
+GRANT SELECT, INSERT, UPDATE, DELETE ON test.* TO 'coder'@'localhost';
+

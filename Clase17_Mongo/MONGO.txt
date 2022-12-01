@@ -1,0 +1,9 @@
+
+Ejecutar contenedor mongo
+
+docker run --name mongo-docker -p 2017:27017  -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=123456 -d mongo
+
+Entrara a consola mongo
+
+docker exec -it mongo-docker mongosh -u root -p 123456
+

@@ -1,0 +1,61 @@
+{
+  "id": 1,
+  "posts": [
+    {
+      "id": 1,
+      "title": "My blogpost",
+      "description": "Shor blog desc",
+      "content": "Hello world",
+      "author": {
+        "id": 1,
+        "name": "Jhon"
+      },
+      "comments": [
+        {
+          "id": 1,
+          "author": {
+            "id": 2,
+            "name": "Jane"
+          },
+          "content": "Nice post"
+        },
+        {
+          "id": 1,
+          "author": {
+            "id": 3,
+            "name": "Lucas"
+          },
+          "content": "Nice post"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "My second post",
+      "description": "Short 2 blog desc",
+      "content": "Hello world",
+      "author": {
+        "id": 2,
+        "name": "Jane"
+      },
+      "comments": [
+        {
+          "id": 1,
+          "author": {
+            "id": 6,
+            "name": "Aaron"
+          },
+          "content": "Nice post"
+        },
+        {
+          "id": 3,
+          "author": {
+            "id": 10,
+            "name": "Ricardo"
+          },
+          "content": "Comment by Carlos"
+        }
+      ]
+    }
+  ]
+}

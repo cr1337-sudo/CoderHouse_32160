@@ -1,3 +1,7 @@
+const normalizr = require("normalizr");
+const normalize = normalizr.normalize;
+const denormalize = normalizr.denormalize;
+const schema = normalizr.schema;
 
 const data = {
   id: "999",
@@ -28,9 +32,9 @@ const data = {
         {
           id: "325",
           commenter: {
-            id: "4",
-            nombre: "Juan",
-            apellido: "Lopez",
+            id: "3",
+            nombre: "Pedro",
+            apellido: "Mei",
             DNI: "20446938",
             direccion: "CABA 789",
             telefono: "1567291542"
@@ -113,6 +117,44 @@ const data = {
   ]
 }
 
+// Definimos un esquema de usuarios (autores y comentadores)
+const user = new schema.Entity('users');
+
+// Definimos un esquema de comentadores
+const comment = new schema.Entity('comments', {
+  commenter: user
+});
+
+// Definimos un esquema de artículos
+const post = new schema.Entity('posts', {
+  author: user,
+  comments: [ comment ]
+});
+
+// Definimos un esquema de posts (array de artículos)
+const blog = new schema.Entity('blogs', {
+  posts: [ post ]
+})
+
+/* ---------------------------------------------------------------------------------------- */
+const util = require('util')
+
+function print(objeto) {
+  console.log(util.inspect(objeto, false, 12, true))
+}
+
+console.log(' ------------- OBJETO ORIGINAL --------------- ')
+print(data)
+console.log(JSON.stringify(data).length)
 
 
-export default data;
+console.log(' ------------- OBJETO NORMALIZADO --------------- ')
+const normalizedData = normalize(data, blog);
+print(normalizedData)
+console.log(JSON.stringify(normalizedData).length)
+
+
+console.log(' ------------- OBJETO DENORMALIZADO --------------- ')
+const denormalizedData = denormalize(normalizedData.result, blog, normalizedData.entities);
+print(denormalizedData)
+console.log(JSON.stringify(denormalizedData).length)

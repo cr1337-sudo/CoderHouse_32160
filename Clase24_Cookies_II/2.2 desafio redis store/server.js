@@ -1,17 +1,35 @@
 import express from "express";
 import session from "express-session";
+import redis from "redis";
+import connectRedis from "connect-redis";
+const RedisStore = connectRedis(session);
+
+const client = redis.createClient({
+  url:""
+  legacyMode: true,
+});
+await client.connect();
 
 const app = express();
 
 app.use(
   session({
+    store: new RedisStore({
+      client: client,
+      ttl: 60,
+    }),
     secret: "shhhhhhhhhhhhhhhhhhhhh",
     resave: false,
     saveUninitialized: false,
+    rolling:true,
+    cookie: {
+      maxAge: 60000,
+    },
   })
 );
 
-const getNombreSession = (req) => req.session.nombre ?? "";
+const getNombreSession = (req) =>
+  req.session.nombre ? req.session.nombre : "";
 
 app.get("/", (req, res) => {
   if (req.session.contador) {
@@ -22,19 +40,18 @@ app.get("/", (req, res) => {
       } veces.`
     );
   } else {
-    req.session.nombre = req.query.nombre;
+    let { nombre } = req.query;
+    req.session.nombre = nombre;
     req.session.contador = 1;
     res.send(`Te damos la bienvenida ${getNombreSession(req)}`);
   }
 });
 
 app.get("/olvidar", (req, res) => {
+  let nombre = getNombreSession(req);
   req.session.destroy((err) => {
-    if (err) {
-      res.json({ error: "olvidar", body: err });
-    } else {
-      res.send(`Hasta luego ${getNombreSession(req)}`);
-    }
+    if (!err) res.send(`Hasta luego ${nombre}`);
+    else res.send({ error: "olvidar", body: err });
   });
 });
 

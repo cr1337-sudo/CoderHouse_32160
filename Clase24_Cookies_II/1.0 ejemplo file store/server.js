@@ -13,7 +13,7 @@ app.use(
     /* ----------------------------------------------------- */
     /*           Persistencia por file store                 */
     /* ----------------------------------------------------- */
-    store: new FileStore({ path: './sesiones', ttl: 300, retries: 0 }),
+    store: new FileStore({ path: './sesiones', retries: 0, ttl: 3600 }),
     /* ----------------------------------------------------- */
 
     secret: 'shhhhhhhhhhhhhhhhhhhhh',

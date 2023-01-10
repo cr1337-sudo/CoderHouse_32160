@@ -2,10 +2,13 @@ import express from "express";
 import session from "express-session";
 import redis from "redis";
 import connectRedis from "connect-redis";
+import dotenv from "dotenv"
+
+dotenv.config()
 const RedisStore = connectRedis(session);
 
 const client = redis.createClient({
-  url:""
+  url:process.env.REDIS_URL,
   legacyMode: true,
 });
 await client.connect();

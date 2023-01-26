@@ -1,0 +1,7 @@
+{"level":30,"time":1674527373109,"pid":2056,"hostname":"DESKTOP-KFUETH5","msg":"Servidor express escuchando en el puerto 8080"}
+{"level":40,"time":1674527379563,"pid":2056,"hostname":"DESKTOP-KFUETH5","msg":"Ruta GET / no implementada"}
+{"level":40,"time":1674527380069,"pid":2056,"hostname":"DESKTOP-KFUETH5","msg":"Ruta GET /favicon.ico no implementada"}
+{"level":40,"time":1674527383246,"pid":2056,"hostname":"DESKTOP-KFUETH5","msg":"Ruta GET / no implementada"}
+{"level":30,"time":1674527387666,"pid":2056,"hostname":"DESKTOP-KFUETH5","msg":"Parámetros 2 y 2 correctos para la suma"}
+{"level":50,"time":1674527393654,"pid":2056,"hostname":"DESKTOP-KFUETH5","msg":"Parámetros incorrectos para la suma"}
+{"level":50,"time":1674527406832,"pid":2056,"hostname":"DESKTOP-KFUETH5","msg":"Parámetros incorrectos para la suma"}

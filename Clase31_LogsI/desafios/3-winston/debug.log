@@ -1,0 +1,5 @@
+{"level":"info","message":"Servidor express escuchando en el puerto 8080"}
+{"level":"warn","message":"Ruta GET / no implementada"}
+{"level":"warn","message":"Ruta GET / no implementada"}
+{"level":"warn","message":"Ruta GET / no implementada"}
+{"level":"error","message":"Parámetros incorrectos para la suma"}

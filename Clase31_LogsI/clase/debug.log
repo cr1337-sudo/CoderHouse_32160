@@ -1,0 +1,5 @@
+{"level":30,"time":1674572286968,"pid":10096,"hostname":"DESKTOP-KFUETH5","msg":"Example app listening on port 8080!"}
+{"level":50,"time":1674572297164,"pid":10096,"hostname":"DESKTOP-KFUETH5","msg":"Parámetros incorrectos"}
+{"level":50,"time":1674572301336,"pid":10096,"hostname":"DESKTOP-KFUETH5","msg":"Parámetros incorrectos"}
+{"level":40,"time":1674572304568,"pid":10096,"hostname":"DESKTOP-KFUETH5","msg":"Ruta GET /sumardsadsa no implementada"}
+{"level":30,"time":1674572312408,"pid":10096,"hostname":"DESKTOP-KFUETH5","msg":"Los parámetros fueron correctos"}

@@ -1,0 +1,22 @@
+curl -X GET "http://localhost:8080/newUser?username=cristian&password=1234567"
+
+BLOQUEANTE
+
+artillery quick --count 10 -n 50 "http://localhost:8080/auth-bloq?username=cristian&password=1234567" > result_bloq.txt
+
+NO BLOQUEANTE
+
+artillery quick --count 10 -n 50 "http://localhost:8080/auth-nobloq?username=cristian&password=1234567" > result_nobloq.txt
+
+
+DECODE PROF
+
+node --prof-process bloq-v8.log > result_prof-bloq.txt
+node --prof-process nobloq-v8.log > result_prof-nobloq.txt
+
+
+NODE INSPECT
+
+node --inspect server.js
+
+chrome://inspect 

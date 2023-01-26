@@ -1,0 +1,265 @@
+Statistical profiling result from nobloq-v8.log, (8348 ticks, 0 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+   8255   98.9%          C:\Windows\SYSTEM32\ntdll.dll
+     89    1.1%          C:\Program Files\nodejs\node.exe
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      1    0.0%   25.0%  LazyCompile: *pushAsyncContext node:internal/async_hooks:540:26
+      1    0.0%   25.0%  LazyCompile: *next C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\index.js:177:16
+      1    0.0%   25.0%  Function: ^send C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\response.js:111:25
+      1    0.0%   25.0%  Function: ^processPromiseRejections node:internal/process/promises:211:34
+
+ [C++]:
+   ticks  total  nonlib   name
+
+ [Summary]:
+   ticks  total  nonlib   name
+      4    0.0%  100.0%  JavaScript
+      0    0.0%    0.0%  C++
+      7    0.1%  175.0%  GC
+   8344  100.0%          Shared libraries
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   8255   98.9%  C:\Windows\SYSTEM32\ntdll.dll
+
+     89    1.1%  C:\Program Files\nodejs\node.exe
+     52   58.4%    C:\Program Files\nodejs\node.exe
+      7   13.5%      Function: ^writevGeneric node:internal/stream_base_commons:122:23
+      7  100.0%        Function: ^Socket._writeGeneric node:net:791:42
+      7  100.0%          Function: ^Socket._writev node:net:823:36
+      7  100.0%            Function: ^doWrite node:internal/streams/writable:398:17
+      5    9.6%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      5  100.0%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1   20.0%          LazyCompile: ~lazyRequire node:internal/crypto/util:67:21
+      1  100.0%            LazyCompile: ~get node:crypto:287:8
+      1   20.0%          Function: ~<anonymous> node:internal/crypto/hkdf:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   20.0%          Function: ~<anonymous> node:http:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   20.0%          Function: ~<anonymous> node:dgram:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   20.0%          Function: ~<anonymous> node:_http_server:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      4    7.7%      LazyCompile: ~pbkdf2Sync node:internal/crypto/pbkdf2:68:20
+      4  100.0%        LazyCompile: ~<anonymous> file:///C:/Users/cristian/Desktop/clase/2da-parte-profiling/ejemplos/Profiling/server.js:14:21
+      4  100.0%          Function: ^handle C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\layer.js:86:49
+      4  100.0%            Function: ^next C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\route.js:116:16
+      4    7.7%      Function: ^compileFunction node:vm:308:25
+      4  100.0%        Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+      4  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1059:37
+      2   50.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      2   50.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      2    3.8%      LazyCompile: ~listOnTimeout node:internal/timers:507:25
+      2  100.0%        Function: ^processTimers node:internal/timers:487:25
+      2    3.8%      LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%        LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1   50.0%          Function: ~<anonymous> node:internal/modules/esm/module_map:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1   50.0%          Function: ~<anonymous> node:internal/modules/esm/fetch_module:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    3.8%      Function: ^stat node:internal/modules/cjs/loader:151:14
+      2  100.0%        Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      2  100.0%          Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      2  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      2    3.8%      Function: ^send C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\response.js:111:25
+      2  100.0%        Function: ^sendStatus C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\response.js:369:37
+      2  100.0%          Function: ^<anonymous> file:///C:/Users/cristian/Desktop/clase/2da-parte-profiling/ejemplos/Profiling/server.js:66:71
+      2  100.0%            Function: ^job.ondone node:internal/crypto/pbkdf2:56:16
+      1    1.9%      LazyCompile: ~value node:internal/console/constructor:321:20
+      1  100.0%        LazyCompile: ~log node:internal/console/constructor:359:6
+      1  100.0%          C:\Program Files\nodejs\node.exe
+      1  100.0%            LazyCompile: ~<anonymous> file:///C:/Users/cristian/Desktop/clase/2da-parte-profiling/ejemplos/Profiling/server.js:77:33
+      1    1.9%      LazyCompile: ~read node:internal/modules/package_json_reader:16:14
+      1  100.0%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      1  100.0%          LazyCompile: ~resolveExports node:internal/modules/cjs/loader:472:24
+      1  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1    1.9%      LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      1  100.0%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    1.9%      LazyCompile: ~patchProcessObject node:internal/bootstrap/pre_execution:89:28
+      1  100.0%        LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:28:36
+      1  100.0%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    1.9%      LazyCompile: ~matchLayer C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\index.js:583:20
+      1  100.0%        LazyCompile: ~next C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\index.js:177:16
+      1  100.0%          LazyCompile: ~handle C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\index.js:136:31
+      1  100.0%            LazyCompile: ~handle C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\application.js:165:29
+      1    1.9%      LazyCompile: ~link node:internal/modules/esm/module_job:69:18
+      1  100.0%        C:\Program Files\nodejs\node.exe
+      1    1.9%      LazyCompile: ~instantiate node:internal/modules/esm/module_job:102:14
+      1  100.0%        LazyCompile: ~run node:internal/modules/esm/module_job:193:12
+      1  100.0%          LazyCompile: ~<anonymous> node:internal/modules/esm/loader:381:15
+      1    1.9%      LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:70:31
+      1  100.0%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    1.9%      LazyCompile: ~Readable.read node:internal/streams/readable:394:35
+      1  100.0%        LazyCompile: ~resume_ node:internal/streams/readable:984:17
+      1  100.0%          LazyCompile: ~processTicksAndRejections node:internal/process/task_queues:68:35
+      1    1.9%      LazyCompile: ~Module._extensions..json node:internal/modules/cjs/loader:1164:39
+      1  100.0%        Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      1    1.9%      Function: ~<anonymous> node:internal/fs/rimraf:1:1
+      1  100.0%        LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%            Function: ~<anonymous> node:internal/fs/promises:1:1
+      1    1.9%      Function: ^toString node:buffer:783:46
+      1  100.0%        Function: ^<anonymous> file:///C:/Users/cristian/Desktop/clase/2da-parte-profiling/ejemplos/Profiling/server.js:66:71
+      1  100.0%          Function: ^job.ondone node:internal/crypto/pbkdf2:56:16
+      1    1.9%      Function: ^stat node:fs:1467:14
+      1  100.0%        Function: ^sendFile C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\send\index.js:712:51
+      1  100.0%          Function: ^pipe C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\send\index.js:506:43
+      1  100.0%            Function: ^serveStatic C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\serve-static\index.js:72:31
+      1    1.9%      Function: ^setHeader node:_http_outgoing:574:57
+      1  100.0%        Function: ^header C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\response.js:777:29
+      1  100.0%          Function: ^contentType C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\response.js:619:32
+      1  100.0%            Function: ^sendStatus C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\response.js:369:37
+      1    1.9%      Function: ^realpathSync node:fs:2425:22
+      1  100.0%        Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%          Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      1  100.0%            Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      1    1.9%      Function: ^originalurl C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\parseurl\index.js:65:22
+      1  100.0%        Function: ^serveStatic C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\serve-static\index.js:72:31
+      1  100.0%          Function: ^handle C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\layer.js:86:49
+      1  100.0%            Function: ^trim_prefix C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\index.js:293:23
+      1    1.9%      Function: ^openSync node:fs:576:18
+      1  100.0%        Function: ^readFileSync node:fs:450:22
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.9%      Function: ^listOnTimeout node:internal/timers:507:25
+      1  100.0%        Function: ^processTimers node:internal/timers:487:25
+      1    1.9%      Function: ^expressInit C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\middleware\init.js:29:30
+      1  100.0%        Function: ^handle C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\layer.js:86:49
+      1  100.0%          Function: ^trim_prefix C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\index.js:293:23
+      1  100.0%            LazyCompile: *next C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\index.js:177:16
+      1    1.9%      Function: ^_storeHeader node:_http_outgoing:374:22
+      1  100.0%        Function: ^writeHead node:_http_server:270:19
+      1  100.0%          Function: ^_implicitHeader node:_http_server:265:68
+      1  100.0%            Function: ^write_ node:_http_outgoing:730:16
+      1    1.9%      Function: ^_flushOutput node:_http_outgoing:951:63
+      1  100.0%        Function: ^_writeRaw node:_http_outgoing:344:19
+      1  100.0%          Function: ^_send node:_http_outgoing:319:49
+      1  100.0%            LazyCompile: ~write_ node:_http_outgoing:730:16
+      1    1.9%      Function: ^FastBuffer node:internal/buffer:958:14
+      1  100.0%        Function: ^fromStringFast node:buffer:413:24
+      1  100.0%          Function: ^fromString node:buffer:432:20
+      1  100.0%            Function: ^from node:buffer:296:28
+      1    1.9%      Function: ^EventEmitter.init node:events:327:29
+      1  100.0%        Function: ^EventEmitter node:events:208:22
+      1  100.0%          Function: ^Stream node:internal/streams/legacy:10:16
+      1  100.0%            Function: ^OutgoingMessage node:_http_outgoing:97:25
+      1    1.9%      C:\Program Files\nodejs\node.exe
+      1  100.0%        Function: ^join node:path:421:7
+      1  100.0%          Function: ^pipe C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\send\index.js:506:43
+      1  100.0%            Function: ^serveStatic C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\serve-static\index.js:72:31
+      2    2.2%    Function: ^normalizeParseOptions C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\qs\lib\parse.js:204:59
+      2  100.0%      Function: ^module.exports C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\qs\lib\parse.js:239:27
+      2  100.0%        Function: ^parseExtendedQueryString C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\utils.js:289:34
+      2  100.0%          Function: ^query C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\middleware\query.js:39:24
+      2  100.0%            Function: ^handle C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\layer.js:86:49
+      2    2.2%    Function: ^_destroy node:internal/streams/destroy:70:18
+      2  100.0%      Function: ^destroy node:internal/streams/destroy:32:17
+      1   50.0%        LazyCompile: ~finish node:internal/streams/writable:745:16
+      1  100.0%          LazyCompile: *processTicksAndRejections node:internal/process/task_queues:68:35
+      1   50.0%        Function: ^endReadableNT node:internal/streams/readable:1338:23
+      1  100.0%          Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    1.1%    LazyCompile: ~resolvePackageTarget node:internal/modules/esm/resolve:572:30
+      1  100.0%      LazyCompile: ~resolvePackageTarget node:internal/modules/esm/resolve:572:30
+      1  100.0%        LazyCompile: ~packageExportsResolve node:internal/modules/esm/resolve:678:31
+      1  100.0%          Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+      1  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1    1.1%    LazyCompile: ~removeAt node:internal/priority_queue:93:11
+      1  100.0%      LazyCompile: ~shift node:internal/priority_queue:107:8
+      1  100.0%        LazyCompile: ~listOnTimeout node:internal/timers:507:25
+      1  100.0%          LazyCompile: ~processTimers node:internal/timers:487:25
+      1    1.1%    LazyCompile: ~check node:internal/crypto/pbkdf2:89:15
+      1  100.0%      LazyCompile: ~pbkdf2Sync node:internal/crypto/pbkdf2:68:20
+      1  100.0%        LazyCompile: ~<anonymous> file:///C:/Users/cristian/Desktop/clase/2da-parte-profiling/ejemplos/Profiling/server.js:14:21
+      1  100.0%          Function: ^handle C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\layer.js:86:49
+      1  100.0%            Function: ^next C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\route.js:116:16
+      1    1.1%    LazyCompile: *next C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\index.js:177:16
+      1  100.0%      Function: ^handle C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\index.js:136:31
+      1  100.0%        Function: ^handle C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\application.js:165:29
+      1  100.0%          Function: ^app C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\express.js:38:21
+      1  100.0%            Function: ^emit node:events:475:44
+      1    1.1%    Function: ^serveStatic C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\serve-static\index.js:72:31
+      1  100.0%      Function: ^handle C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\layer.js:86:49
+      1  100.0%        Function: ^trim_prefix C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\index.js:293:23
+      1  100.0%          LazyCompile: *next C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\index.js:177:16
+      1  100.0%            Function: ^expressInit C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\middleware\init.js:29:30
+      1    1.1%    Function: ^send C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\send\index.js:83:15
+      1  100.0%      Function: ^serveStatic C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\serve-static\index.js:72:31
+      1  100.0%        Function: ^handle C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\layer.js:86:49
+      1  100.0%          Function: ^trim_prefix C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\index.js:293:23
+      1  100.0%            LazyCompile: *next C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\index.js:177:16
+      1    1.1%    Function: ^send C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\response.js:111:25
+      1  100.0%      Function: ^sendStatus C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\response.js:369:37
+      1  100.0%        Function: ^<anonymous> file:///C:/Users/cristian/Desktop/clase/2da-parte-profiling/ejemplos/Profiling/server.js:66:71
+      1  100.0%          Function: ^job.ondone node:internal/crypto/pbkdf2:56:16
+      1    1.1%    Function: ^resolve node:path:158:10
+      1  100.0%      Function: ^toNamespacedPath node:path:618:19
+      1  100.0%        LazyCompile: ~realpathSync node:fs:2425:22
+      1  100.0%          LazyCompile: ~finalizeResolution node:internal/modules/esm/resolve:397:28
+      1  100.0%            LazyCompile: ~moduleResolve node:internal/modules/esm/resolve:988:23
+      1    1.1%    Function: ^readFileSync node:fs:450:22
+      1  100.0%      LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1114:37
+      1  100.0%        LazyCompile: ~Module.load node:internal/modules/cjs/loader:969:33
+      1  100.0%          LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      1    1.1%    Function: ^pushAsyncContext node:internal/async_hooks:540:26
+      1  100.0%      Function: ^emitBeforeScript node:internal/async_hooks:510:26
+      1  100.0%        Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    1.1%    Function: ^parserOnIncoming node:_http_server:857:26
+      1  100.0%      Function: ^parserOnHeadersComplete node:_http_common:77:33
+      1    1.1%    Function: ^parseQueryStringKeys C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\qs\lib\parse.js:150:46
+      1  100.0%      Function: ^module.exports C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\qs\lib\parse.js:239:27
+      1  100.0%        Function: ^parseExtendedQueryString C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\utils.js:289:34
+      1  100.0%          Function: ^query C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\middleware\query.js:39:24
+      1  100.0%            Function: ^handle C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\layer.js:86:49
+      1    1.1%    Function: ^onstat C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\send\index.js:717:33
+      1  100.0%      Function: ^<anonymous> node:fs:197:10
+      1    1.1%    Function: ^module.exports C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\qs\lib\parse.js:239:27
+      1  100.0%      Function: ^parseExtendedQueryString C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\utils.js:289:34
+      1  100.0%        Function: ^query C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\middleware\query.js:39:24
+      1  100.0%          Function: ^handle C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\layer.js:86:49
+      1  100.0%            Function: ^trim_prefix C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\index.js:293:23
+      1    1.1%    Function: ^matchLayer C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\index.js:583:20
+      1  100.0%      Function: ^next C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\index.js:177:16
+      1  100.0%        LazyCompile: ~error C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\serve-static\index.js:115:39
+      1  100.0%          Function: ^emit node:events:475:44
+      1  100.0%            LazyCompile: ~error C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\send\index.js:267:45
+      1    1.1%    Function: ^end node:_http_outgoing:833:45
+      1  100.0%      Function: ^send C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\response.js:111:25
+      1  100.0%        Function: ^sendStatus C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\response.js:369:37
+      1  100.0%          Function: ^<anonymous> file:///C:/Users/cristian/Desktop/clase/2da-parte-profiling/ejemplos/Profiling/server.js:66:71
+      1  100.0%            Function: ^job.ondone node:internal/crypto/pbkdf2:56:16
+      1    1.1%    Function: ^append node:internal/linkedlist:30:16
+      1  100.0%      Function: ^insert node:internal/timers:350:16
+      1  100.0%        Function: ^setUnrefTimeout node:internal/timers:372:25
+      1  100.0%          Function: ^setStreamTimeout node:internal/stream_base_commons:237:26
+      1  100.0%            Function: ^resOnFinish node:_http_server:793:21
+      1    1.1%    Function: ^Socket.read node:net:661:33
+      1  100.0%      Function: ^Socket node:net:285:16
+      1  100.0%        Function: ^onconnection node:net:1587:22
+      1    1.1%    Function: ^Readable.resume node:internal/streams/readable:963:37
+      1  100.0%      Function: ^Socket.resume node:net:652:35
+      1  100.0%        Function: ^readStart node:_http_incoming:40:19
+      1  100.0%          Function: ^parserOnMessageComplete node:_http_common:147:33
+      1    1.1%    Function: ^OutgoingMessage node:_http_outgoing:97:25
+      1  100.0%      Function: ^ServerResponse node:_http_server:178:24
+      1  100.0%        Function: ^parserOnIncoming node:_http_server:857:26
+      1  100.0%          Function: ^parserOnHeadersComplete node:_http_common:77:33
+      1    1.1%    Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%      Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%        Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      1  100.0%          Function: ^require node:internal/modules/cjs/helpers:101:31
+      1  100.0%            Function: ~<anonymous> C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\get-intrinsic\index.js:1:1
+

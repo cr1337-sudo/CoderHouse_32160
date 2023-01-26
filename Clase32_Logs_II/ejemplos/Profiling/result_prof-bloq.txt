@@ -1,0 +1,50 @@
+Statistical profiling result from bloq-v8.log, (9831 ticks, 0 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+   7346   74.7%          C:\Windows\SYSTEM32\ntdll.dll
+   2483   25.3%          C:\Program Files\nodejs\node.exe
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      1    0.0%   50.0%  Function: ^next C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\index.js:177:16
+      1    0.0%   50.0%  Function: ^emitReadable_ node:internal/streams/readable:574:23
+
+ [C++]:
+   ticks  total  nonlib   name
+
+ [Summary]:
+   ticks  total  nonlib   name
+      2    0.0%  100.0%  JavaScript
+      0    0.0%    0.0%  C++
+      1    0.0%   50.0%  GC
+   9829  100.0%          Shared libraries
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   7346   74.7%  C:\Windows\SYSTEM32\ntdll.dll
+
+   2483   25.3%  C:\Program Files\nodejs\node.exe
+   2466   99.3%    C:\Program Files\nodejs\node.exe
+   2368   96.0%      Function: ^pbkdf2Sync node:internal/crypto/pbkdf2:68:20
+   2360   99.7%        Function: ^<anonymous> file:///C:/Users/cristian/Desktop/clase/2da-parte-profiling/ejemplos/Profiling/server.js:32:23
+   2360  100.0%          Function: ^handle C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\layer.js:86:49
+   2334   98.9%            Function: ^next C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\route.js:116:16
+     26    1.1%            LazyCompile: ~next C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\route.js:116:16
+     41    1.7%      LazyCompile: ~pbkdf2Sync node:internal/crypto/pbkdf2:68:20
+     36   87.8%        LazyCompile: ~<anonymous> file:///C:/Users/cristian/Desktop/clase/2da-parte-profiling/ejemplos/Profiling/server.js:32:23
+     27   75.0%          Function: ^handle C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\layer.js:86:49
+     27  100.0%            LazyCompile: ~next C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\route.js:116:16
+      9   25.0%          LazyCompile: ~handle C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\layer.js:86:49
+      9  100.0%            LazyCompile: ~next C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\route.js:116:16
+      5   12.2%        LazyCompile: ~<anonymous> file:///C:/Users/cristian/Desktop/clase/2da-parte-profiling/ejemplos/Profiling/server.js:14:21
+      5  100.0%          LazyCompile: ~handle C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\layer.js:86:49
+      5  100.0%            LazyCompile: ~next C:\Users\cristian\Desktop\clase\2da-parte-profiling\ejemplos\Profiling\node_modules\express\lib\router\route.js:116:16
+
